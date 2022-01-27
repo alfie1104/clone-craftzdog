@@ -1,11 +1,17 @@
+import NextLink from 'next/link'
 import {
   Container,
   Box,
   Heading,
   Image,
-  useColorModeValue
+  useColorModeValue,
+  Link,
+  Button
 } from '@chakra-ui/react'
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import Paragraph from '../components/paragraph'
 import Section from '../components/section'
+import { BioSection, BioYear } from '../components/bio'
 
 const Page = () => {
   return (
@@ -50,7 +56,39 @@ const Page = () => {
         <Heading as="h3" variant={'section-title'}>
           Work
         </Heading>
-        <p>Paragraph</p>
+        <Paragraph>
+          Work Paragraph blah blah called{' '}
+          <NextLink href="/works/inkdrop">
+            <Link>Inkdrop</Link>
+          </NextLink>
+          .
+        </Paragraph>
+        <Box align="center" my={4}>
+          <NextLink href="/works">
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              My portfolio
+            </Button>
+          </NextLink>
+        </Box>
+      </Section>
+      <Section delay={0.2}>
+        <Heading as="h3" variant={'section-title'}>
+          Bio
+        </Heading>
+        <BioSection>
+          <BioYear>19XX</BioYear>
+          Born in Korea
+        </BioSection>
+        <BioSection>
+          <BioYear>2022</BioYear>
+          Learning Next.js and Chakra-ui by cloning craftzdog site
+        </BioSection>
+      </Section>
+      <Section delay={0.3}>
+        <Heading as="h3" variant={'section-title'}>
+          I Love
+        </Heading>
+        <Paragraph>Music, Blockchain, Investment</Paragraph>
       </Section>
     </Container>
   )
