@@ -6,13 +6,26 @@ import {
   Image,
   useColorModeValue,
   Link,
-  Button
+  Button,
+  SimpleGrid,
+  List,
+  ListItem,
+  Icon
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Layout from '../components/layouts/article'
 import Paragraph from '../components/paragraph'
 import Section from '../components/section'
 import { BioSection, BioYear } from '../components/bio'
+import { GridItem } from '../components/grid-item'
+import {
+  IoLogoTwitter,
+  IoLogoInstagram,
+  IoLogoGithub,
+  IoLogoDiscord
+} from 'react-icons/io5'
+import thumbYouTube from '../public/images/links/youtube.png'
+import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
 
 const Page = () => {
   return (
@@ -91,6 +104,75 @@ const Page = () => {
             I Love
           </Heading>
           <Paragraph>Music, Blockchain, Investment</Paragraph>
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            On the web
+          </Heading>
+          <List>
+            <ListItem>
+              <Link href="https://github.com/alfie1104" target="_blank">
+                <Button
+                  variant={'ghost'}
+                  colorScheme={'teal'}
+                  leftIcon={<Icon as={IoLogoGithub} />}
+                >
+                  @peter_alfie
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/alfie1104" target="_blank">
+                <Button
+                  variant={'ghost'}
+                  colorScheme={'teal'}
+                  leftIcon={<Icon as={IoLogoTwitter} />}
+                >
+                  @peter_alfie
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/alfie1104" target="_blank">
+                <Button
+                  variant={'ghost'}
+                  colorScheme={'teal'}
+                  leftIcon={<Icon as={IoLogoInstagram} />}
+                >
+                  @peter_alfie
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/alfie1104" target="_blank">
+                <Button
+                  variant={'ghost'}
+                  colorScheme={'teal'}
+                  leftIcon={<Icon as={IoLogoDiscord} />}
+                >
+                  @peter_alfie
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
+
+          <SimpleGrid columns={[1, 2, 2]} gap={6}>
+            <GridItem
+              href="https://www.youtube.com/devaslife"
+              title="Dev as Life"
+              thumbnail={thumbYouTube}
+            >
+              CraftzDog&apos;s Youtube Channel
+            </GridItem>
+            <GridItem
+              href="https://www.inkdrop.app"
+              title="Inkdrop"
+              thumbnail={thumbInkdrop}
+            >
+              CraftzDog&apos;s Note app(Inkdrop)
+            </GridItem>
+          </SimpleGrid>
         </Section>
       </Container>
     </Layout>
